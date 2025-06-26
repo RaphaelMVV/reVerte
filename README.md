@@ -53,27 +53,71 @@ reverte/
 
 ## 🛠️ Installation rapide
 
-### Backend (Node.js)
+### 📦 Prérequis
+
+Assurez-vous d’avoir installé sur votre machine :
+
+- [Node.js](https://nodejs.org) (v18 ou plus)
+- [npm](https://www.npmjs.com/)
+- [Python 3](https://www.python.org/)
+- `pip3` (inclus avec Python)
+- [MQTT Explorer](https://mqtt-explorer.com/) (pour visualiser les messages MQTT)
+- [Git](https://git-scm.com/)
+
+---
+
+### 🧰 Étapes pour démarrer le projet ReVerte
+
+#### 1. Cloner le projet
+```bash
+git clone https://github.com/<utilisateur>/reverte.git
+cd reverte
+```
+
+#### 2. Lancer le backend (Node.js)
 ```bash
 cd backend
 npm install
 npm start
 ```
 
-### Frontend (React)
+> Le backend écoute sur http://localhost:3000
+
+#### 3. Lancer le frontend (React)
 ```bash
-cd frontend
+cd ../frontend
 npm install
-npm run dev
+npm start
 ```
 
-### Capteurs (Raspberry Pi + MQTT)
+> L’interface est accessible sur http://localhost:3000
+
+#### 4. Lancer les capteurs (Python + MQTT)
 ```bash
-cd sensors
+cd ../sensors
+pip3 install ruuvitag_sensor paho-mqtt
 python3 ruuvi_mqtt_publisher.py
 ```
 
+> Ce script lit les données des balises RuuviTag et les publie sur un broker MQTT.
+> Utilisez MQTT Explorer pour voir les messages en temps réel.
+
 ---
+
+### 🧪 Test de fonctionnement
+
+1. Approchez une source de chaleur d’un capteur (lampe, main…)
+2. Vérifiez les messages MQTT dans MQTT Explorer
+3. Assurez-vous que :
+   - Le backend reçoit les données
+   - L’alerte est déclenchée si un seuil est dépassé
+   - Le dashboard frontend affiche les mesures en direct
+
+---
+
+### ℹ️ Remarque
+
+> La base de données PostgreSQL n’est pas encore utilisée. Aucune configuration n’est requise à ce stade.
 
 ## 👥 Équipe projet
 
