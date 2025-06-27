@@ -137,6 +137,6 @@ python3 ruuvi_mqtt_publisher.py
 
 ## 📄 Licence
 
-Ce projet est sous licence **MIT** – utilisation libre à but éducatif ou communautaire.
+Ce projet est sous licence **HETIC** – utilisation libre à but éducatif ou communautaire.
 
 ---
